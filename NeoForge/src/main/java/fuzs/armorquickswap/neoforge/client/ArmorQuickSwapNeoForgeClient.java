@@ -2,7 +2,7 @@ package fuzs.armorquickswap.neoforge.client;
 
 import fuzs.armorquickswap.ArmorQuickSwap;
 import fuzs.armorquickswap.client.ArmorQuickSwapClient;
-import fuzs.puzzleslib.api.client.core.v1.ClientModConstructor;
+import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.Mod;
 

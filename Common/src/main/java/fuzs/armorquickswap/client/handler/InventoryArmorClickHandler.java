@@ -1,7 +1,7 @@
 package fuzs.armorquickswap.client.handler;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import fuzs.puzzleslib.api.event.v1.core.EventResult;
+import fuzs.puzzleslib.common.api.event.v1.core.EventResult;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.client.input.MouseButtonEvent;
@@ -9,7 +9,7 @@ import net.minecraft.client.multiplayer.MultiPlayerGameMode;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.inventory.ContainerInput;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
@@ -65,8 +65,8 @@ public class InventoryArmorClickHandler {
 
     /**
      * Minecraft 1.20.4 introduced a fun limitation in
-     * {@link net.minecraft.world.inventory.AbstractContainerMenu#doClick(int, int, ClickType, Player)} where the slot
-     * being swapped with (the second slot in the method call) can only be from the hotbar or offhand.
+     * {@link net.minecraft.world.inventory.AbstractContainerMenu#doClick(int, int, ContainerInput, Player)} where the
+     * slot being swapped with (the second slot in the method call) can only be from the hotbar or offhand.
      * <p>
      * Previously, freely swapping with any other inventory slot was possible.
      *
@@ -77,26 +77,26 @@ public class InventoryArmorClickHandler {
      */
     private static void swapSurvivalInventorySlots(MultiPlayerGameMode gameMode, Player player, Slot destinationSlot, Slot clickedSlot) {
         if (clickedSlot.getContainerSlot() >= 0 && clickedSlot.getContainerSlot() < Inventory.getSelectionSize()) {
-            gameMode.handleInventoryMouseClick(player.containerMenu.containerId,
+            gameMode.handleContainerInput(player.containerMenu.containerId,
                     destinationSlot.index,
                     clickedSlot.getContainerSlot(),
-                    ClickType.SWAP,
+                    ContainerInput.SWAP,
                     player);
         } else {
-            gameMode.handleInventoryMouseClick(player.containerMenu.containerId,
+            gameMode.handleContainerInput(player.containerMenu.containerId,
                     clickedSlot.index,
                     InputConstants.MOUSE_BUTTON_LEFT,
-                    ClickType.PICKUP,
+                    ContainerInput.PICKUP,
                     player);
-            gameMode.handleInventoryMouseClick(player.containerMenu.containerId,
+            gameMode.handleContainerInput(player.containerMenu.containerId,
                     destinationSlot.index,
                     InputConstants.MOUSE_BUTTON_LEFT,
-                    ClickType.PICKUP,
+                    ContainerInput.PICKUP,
                     player);
-            gameMode.handleInventoryMouseClick(player.containerMenu.containerId,
+            gameMode.handleContainerInput(player.containerMenu.containerId,
                     clickedSlot.index,
                     InputConstants.MOUSE_BUTTON_LEFT,
-                    ClickType.PICKUP,
+                    ContainerInput.PICKUP,
                     player);
         }
     }

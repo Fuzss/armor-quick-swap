@@ -2,10 +2,10 @@ package fuzs.armorquickswap.client;
 
 import fuzs.armorquickswap.client.handler.InventoryArmorClickHandler;
 import fuzs.armorquickswap.client.handler.LocalArmorStandGearHandler;
-import fuzs.puzzleslib.api.client.core.v1.ClientModConstructor;
-import fuzs.puzzleslib.api.client.event.v1.entity.player.InteractionInputEvents;
-import fuzs.puzzleslib.api.client.event.v1.gui.ScreenMouseEvents;
-import fuzs.puzzleslib.api.event.v1.core.EventPhase;
+import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
+import fuzs.puzzleslib.common.api.client.event.v1.entity.player.InteractionInputEvents;
+import fuzs.puzzleslib.common.api.client.event.v1.gui.ScreenMouseEvents;
+import fuzs.puzzleslib.common.api.event.v1.core.EventPhase;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 
 public class ArmorQuickSwapClient implements ClientModConstructor {

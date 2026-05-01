@@ -2,8 +2,8 @@ package fuzs.armorquickswap.client.handler;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import fuzs.armorquickswap.ArmorQuickSwap;
-import fuzs.puzzleslib.api.event.v1.core.EventResult;
-import fuzs.puzzleslib.api.network.v4.NetworkingHelper;
+import fuzs.puzzleslib.common.api.event.v1.core.EventResult;
+import fuzs.puzzleslib.common.api.network.v4.NetworkingHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.client.player.LocalPlayer;
@@ -17,7 +17,7 @@ import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.inventory.ContainerInput;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -57,10 +57,10 @@ public class LocalArmorStandGearHandler {
                 // This mainly affects the first-person item renderer as well as the selected item tooltip above the hotbar.
                 // Setting the count back to what it was does not trigger an update for those mentioned, and as the selected stack is returned at the end of this method, no update should trigger.
                 int selectedItemCount = itemStack.getCount();
-                minecraft.gameMode.handleInventoryMouseClick(containerMenu.containerId,
+                minecraft.gameMode.handleContainerInput(containerMenu.containerId,
                         slot.index,
                         InputConstants.MOUSE_BUTTON_LEFT,
-                        ClickType.PICKUP,
+                        ContainerInput.PICKUP,
                         player);
                 itemStack.setCount(selectedItemCount);
             }
@@ -83,10 +83,10 @@ public class LocalArmorStandGearHandler {
 
                         // if we are wearing an armor piece corresponding to the armor stand part we are about to click swap it to the selected slot,
                         // so we can place or swap with the armor stand equipment
-                        minecraft.gameMode.handleInventoryMouseClick(containerMenu.containerId,
+                        minecraft.gameMode.handleContainerInput(containerMenu.containerId,
                                 armorSlot.index,
                                 slot.getContainerSlot(),
-                                ClickType.SWAP,
+                                ContainerInput.SWAP,
                                 player);
 
                         Vec3 hitVector = hitResult.getLocation();
@@ -100,7 +100,7 @@ public class LocalArmorStandGearHandler {
                                     hitVector.z());
                         }
 
-                        minecraft.gameMode.interactAt(player,
+                        minecraft.gameMode.interact(player,
                                 armorStand,
                                 new EntityHitResult(armorStand, hitVector),
                                 interactionHand);
@@ -117,10 +117,10 @@ public class LocalArmorStandGearHandler {
                         }
 
                         // if the amor stand had equipment where we clicked we are holding that piece now, so set it to our armor slot
-                        minecraft.gameMode.handleInventoryMouseClick(containerMenu.containerId,
+                        minecraft.gameMode.handleContainerInput(containerMenu.containerId,
                                 armorSlot.index,
                                 slot.getContainerSlot(),
-                                ClickType.SWAP,
+                                ContainerInput.SWAP,
                                 player);
                     }
                 }
@@ -129,10 +129,10 @@ public class LocalArmorStandGearHandler {
             if (hasItemInHand) {
 
                 // set back the originally selected item to the main hand slot which we parked as the cursor carried stack, so we can freely use the selected slot
-                minecraft.gameMode.handleInventoryMouseClick(containerMenu.containerId,
+                minecraft.gameMode.handleContainerInput(containerMenu.containerId,
                         slot.index,
                         InputConstants.MOUSE_BUTTON_LEFT,
-                        ClickType.PICKUP,
+                        ContainerInput.PICKUP,
                         player);
             }
 

@@ -1,7 +1,7 @@
 package fuzs.armorquickswap.handler;
 
 import fuzs.armorquickswap.mixin.accessor.ArmorStandAccessor;
-import fuzs.puzzleslib.api.event.v1.core.EventResultHolder;
+import fuzs.puzzleslib.common.api.event.v1.core.EventResultHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -14,7 +14,7 @@ import net.minecraft.world.phys.Vec3;
 
 public class ArmorStandGearHandler {
 
-    public static EventResultHolder<InteractionResult> onUseEntityAt(Player player, Level level, InteractionHand interactionHand, Entity entity, Vec3 hitVector) {
+    public static EventResultHolder<InteractionResult> onUseEntity(Player player, Level level, InteractionHand interactionHand, Entity entity, Vec3 hitVector) {
 
         if (entity instanceof ArmorStand armorStand && player.isShiftKeyDown() && !armorStand.isMarker()
                 && !player.isSpectator()) {

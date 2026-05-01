@@ -1,10 +1,9 @@
 package fuzs.armorquickswap;
 
 import fuzs.armorquickswap.handler.ArmorStandGearHandler;
-import fuzs.puzzleslib.api.core.v1.ModConstructor;
-import net.minecraft.resources.Identifier;
-import fuzs.puzzleslib.api.event.v1.core.EventPhase;
-import fuzs.puzzleslib.api.event.v1.entity.player.PlayerInteractEvents;
+import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
+import fuzs.puzzleslib.common.api.event.v1.core.EventPhase;
+import fuzs.puzzleslib.common.api.event.v1.entity.player.PlayerInteractEvents;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +20,7 @@ public class ArmorQuickSwap implements ModConstructor {
 
     private static void registerEventHandlers() {
         // run before other mods like Quark that might interfere here
-        PlayerInteractEvents.USE_ENTITY_AT.register(EventPhase.BEFORE, ArmorStandGearHandler::onUseEntityAt);
+        PlayerInteractEvents.USE_ENTITY.register(EventPhase.BEFORE, ArmorStandGearHandler::onUseEntity);
     }
 
     public static Identifier id(String path) {

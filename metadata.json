@@ -1,9 +1,10 @@
 {
+    "minecraft": "26.1.2",
     "mod": {
         "id": "armorquickswap",
         "group": "fuzs.armorquickswap",
         "name": "Armor Quick Swap",
-        "version": "21.11.2",
+        "version": "26.1.0",
         "authors": [
             "Fuzs"
         ],
@@ -36,13 +37,13 @@
     ],
     "links": [
         {
-            "name": "github",
-            "slug": "armorquickswap"
-        },
-        {
             "name": "curseforge",
             "slug": "armor-quick-swap",
             "id": "1367068"
+        },
+        {
+            "name": "github",
+            "slug": "armor-quick-swap"
         },
         {
             "name": "modrinth",
