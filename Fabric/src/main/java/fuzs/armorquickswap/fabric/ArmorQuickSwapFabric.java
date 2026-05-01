@@ -1,6 +1,6 @@
 package fuzs.armorquickswap.fabric;
 
-import fuzs.armorquickswap.ArmorQuickSwap;
+import fuzs.armorquickswap.common.ArmorQuickSwap;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import net.fabricmc.api.ModInitializer;
 

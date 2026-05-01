@@ -1,6 +1,6 @@
-package fuzs.armorquickswap.handler;
+package fuzs.armorquickswap.common.handler;
 
-import fuzs.armorquickswap.mixin.accessor.ArmorStandAccessor;
+import fuzs.armorquickswap.common.mixin.accessor.ArmorStandAccessor;
 import fuzs.puzzleslib.common.api.event.v1.core.EventResultHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

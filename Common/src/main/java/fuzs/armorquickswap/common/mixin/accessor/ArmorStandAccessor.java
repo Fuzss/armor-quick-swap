@@ -1,4 +1,4 @@
-package fuzs.armorquickswap.mixin.accessor;
+package fuzs.armorquickswap.common.mixin.accessor;
 
 import net.minecraft.world.entity.decoration.ArmorStand;
 import org.spongepowered.asm.mixin.Mixin;

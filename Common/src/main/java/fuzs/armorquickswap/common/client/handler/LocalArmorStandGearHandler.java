@@ -1,7 +1,7 @@
-package fuzs.armorquickswap.client.handler;
+package fuzs.armorquickswap.common.client.handler;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import fuzs.armorquickswap.ArmorQuickSwap;
+import fuzs.armorquickswap.common.ArmorQuickSwap;
 import fuzs.puzzleslib.common.api.event.v1.core.EventResult;
 import fuzs.puzzleslib.common.api.network.v4.NetworkingHelper;
 import net.minecraft.client.Minecraft;

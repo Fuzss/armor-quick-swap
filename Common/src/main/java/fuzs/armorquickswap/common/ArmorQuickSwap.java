@@ -1,6 +1,6 @@
-package fuzs.armorquickswap;
+package fuzs.armorquickswap.common;
 
-import fuzs.armorquickswap.handler.ArmorStandGearHandler;
+import fuzs.armorquickswap.common.handler.ArmorStandGearHandler;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import fuzs.puzzleslib.common.api.event.v1.core.EventPhase;
 import fuzs.puzzleslib.common.api.event.v1.entity.player.PlayerInteractEvents;

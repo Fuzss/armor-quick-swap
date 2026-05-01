@@ -1,4 +1,4 @@
-package fuzs.armorquickswap.client.handler;
+package fuzs.armorquickswap.common.client.handler;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import fuzs.puzzleslib.common.api.event.v1.core.EventResult;

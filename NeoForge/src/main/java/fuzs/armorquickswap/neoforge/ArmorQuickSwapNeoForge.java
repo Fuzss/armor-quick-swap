@@ -1,6 +1,6 @@
 package fuzs.armorquickswap.neoforge;
 
-import fuzs.armorquickswap.ArmorQuickSwap;
+import fuzs.armorquickswap.common.ArmorQuickSwap;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import fuzs.puzzleslib.common.api.core.v1.ModLoaderEnvironment;
 import net.neoforged.fml.common.Mod;

@@ -1,7 +1,7 @@
 package fuzs.armorquickswap.fabric.client;
 
-import fuzs.armorquickswap.ArmorQuickSwap;
-import fuzs.armorquickswap.client.ArmorQuickSwapClient;
+import fuzs.armorquickswap.common.ArmorQuickSwap;
+import fuzs.armorquickswap.common.client.ArmorQuickSwapClient;
 import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import net.fabricmc.api.ClientModInitializer;
 
