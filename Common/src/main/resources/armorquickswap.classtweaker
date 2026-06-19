@@ -1,3 +1,4 @@
 classTweaker    v2  official
 transitive-accessible   class   net/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen$SlotWrapper
 transitive-accessible   field   net/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen$SlotWrapper  target  Lnet/minecraft/world/inventory/Slot;
+accessible  field   net/minecraft/world/entity/decoration/ArmorStand    disabledSlots   I

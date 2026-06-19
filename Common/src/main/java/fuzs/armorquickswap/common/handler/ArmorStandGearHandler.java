@@ -1,6 +1,5 @@
 package fuzs.armorquickswap.common.handler;
 
-import fuzs.armorquickswap.common.mixin.accessor.ArmorStandAccessor;
 import fuzs.puzzleslib.common.api.event.v1.core.EventResultHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -45,8 +44,7 @@ public class ArmorStandGearHandler {
         ItemStack itemInSlot = armorStand.getItemBySlot(slot);
         // we respect disabled slots on the server, this is not possible to do with the client-side implementation,
         // since the field is not synced to the client, the interaction should just fail then
-        int disabledSlots = ((ArmorStandAccessor) armorStand).armorquickswap$getDisabledSlots();
-        if ((disabledSlots & 1 << slot.getFilterBit(0)) != 0) {
+        if ((armorStand.disabledSlots & 1 << slot.getFilterBit(0)) != 0) {
             return false;
         } else if (!stack.isEmpty() && stack.getCount() > 1) {
             if (!itemInSlot.isEmpty()) {

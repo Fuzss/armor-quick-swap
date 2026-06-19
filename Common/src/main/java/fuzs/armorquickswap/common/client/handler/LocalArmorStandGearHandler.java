@@ -10,7 +10,7 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.decoration.ArmorStand;
@@ -170,7 +170,7 @@ public class LocalArmorStandGearHandler {
             case FEET -> Mth.lerp(0.5, 0.1, 0.1 + (isSmallArmorStand ? 0.8 : 0.45));
             case CHEST -> Mth.lerp(0.5, 0.9 + (isSmallArmorStand ? 0.3 : 0.0), 0.9 + (isSmallArmorStand ? 1.0 : 0.7));
             case LEGS -> Mth.lerp(0.5, 0.4, 0.4 + (isSmallArmorStand ? 1.0 : 0.8));
-            case HEAD -> Mth.lerp(0.5, 1.6, EntityType.ARMOR_STAND.getHeight());
+            case HEAD -> Mth.lerp(0.5, 1.6, EntityTypes.ARMOR_STAND.getHeight());
             default -> throw new IllegalArgumentException();
         } * armorStand.getScale() * armorStand.getAgeScale();
     }
