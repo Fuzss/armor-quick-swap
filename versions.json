@@ -6,11 +6,17 @@
     "26.1.x": "maintained",
     "26.2.x": "primary"
   },
-  "properties": {
-    "distributions.curseforge.id": "1367068",
-    "distributions.curseforge.slug": "armor-quick-swap",
-    "distributions.github.slug": "armor-quick-swap",
-    "distributions.modrinth.id": "YxCEfYbF",
-    "distributions.modrinth.slug": "armor-quick-swap"
+  "distributions": {
+    "curseforge": {
+      "id": "1367068",
+      "slug": "armor-quick-swap"
+    },
+    "github": {
+      "slug": "armor-quick-swap"
+    },
+    "modrinth": {
+      "id": "YxCEfYbF",
+      "slug": "armor-quick-swap"
+    }
   }
 }
