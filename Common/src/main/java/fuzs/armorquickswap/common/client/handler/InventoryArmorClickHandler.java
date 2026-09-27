@@ -69,11 +69,6 @@ public class InventoryArmorClickHandler {
      * slot being swapped with (the second slot in the method call) can only be from the hotbar or offhand.
      * <p>
      * Previously, freely swapping with any other inventory slot was possible.
-     *
-     * @param gameMode        the local game mode controller
-     * @param player          the player
-     * @param destinationSlot the slot the item will be but in / swapped with
-     * @param clickedSlot     the item slot that was clicked
      */
     private static void swapSurvivalInventorySlots(MultiPlayerGameMode gameMode, Player player, Slot destinationSlot, Slot clickedSlot) {
         if (clickedSlot.getContainerSlot() >= 0 && clickedSlot.getContainerSlot() < Inventory.getSelectionSize()) {

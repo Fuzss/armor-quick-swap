@@ -21,6 +21,7 @@ import net.minecraft.world.inventory.ContainerInput;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.SwingAnimation;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -136,8 +137,9 @@ public class LocalArmorStandGearHandler {
                         player);
             }
 
-            // manually swing the player hand since the event won't do it when cancelled
-            player.swing(interactionHand, player.getItemInHand(interactionHand).getInteractAnimation(), false);
+            // Manually swing the player hand since the event won't do it when canceled.
+            SwingAnimation animation = player.getItemInHand(interactionHand).getInteractAnimation();
+            player.swing(interactionHand, animation, false);
             return EventResult.INTERRUPT;
         }
 
