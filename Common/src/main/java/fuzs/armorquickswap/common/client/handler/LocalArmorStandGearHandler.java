@@ -137,7 +137,7 @@ public class LocalArmorStandGearHandler {
             }
 
             // manually swing the player hand since the event won't do it when cancelled
-            player.swing(interactionHand);
+            player.swing(interactionHand, player.getItemInHand(interactionHand).getInteractAnimation(), false);
             return EventResult.INTERRUPT;
         }
 

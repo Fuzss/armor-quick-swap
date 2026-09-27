@@ -29,7 +29,7 @@ public class ArmorStandGearHandler {
                 }
 
                 // manually trigger hand swing on server-side, so it works for vanilla clients when connected to a server with the mod
-                player.swing(interactionHand, true);
+                player.swing(interactionHand, player.getItemInHand(interactionHand).getInteractAnimation(), true);
             }
 
             // also must prevent the swing from playing on the client
